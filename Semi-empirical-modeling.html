@@ -49,8 +49,8 @@
             <b><h2 style="text-align: center;">Abstract</h2></b>
 
             <p>
-                This paper presents a semi-empirical method for simulating contact with 
-                elastically deformable objects whose force response is learned using entirely data-driven models.  
+                This paper presents a <i>semi-empirical method</i> for simulating contact with 
+                elastically <i>deformable objects</i> whose force response is learned using entirely data-driven models.  
                 A point-based surface representation and inhomogeneous, nonlinear force response model are learned 
                 from a robotic arm acquiring force-displacement curves from a small number of poking interactions.  
                 The simulator then estimates displacement and force response when the deformable object is in contact 
@@ -67,19 +67,20 @@
                         <img src="images/RobotPoking/system_all.png" alt=""></span></a>
                     </div>
                     <div class="6u$"><a href=""><span class="image fit">
-                            <img src="images/RobotPoking/poking_video.png" alt=""></span></a>
+                            <img src="images/RobotPoking/objects.png" alt=""></span></a>
                     </div>           
                 </div>
             </div>
 
-            <p><i>Our Poking System</i> gathered data using the point probe, 
-                and the simulator generalizes force predictions to the line and cylinder probes. 
+            <p>We evaluate this approach using <i>an experimental testbed</i> onsisting of a robot arm equipped 
+                with a RGB- D camera, a tapered probe attached at the end-effector, and a force-torque (F/T) sensor.
+                We include 5 different testing objects in our experiments, Sloth, Vest, Lamb, Shoe, and Bird.
+                Each object has varying stiffness across the object surface.
             </p> 
 
-            <hr>
-
+            <!--hr-->
             
-            <b><h2 style="text-align: center;">Summary Video</h2></b>
+            <!--b><h2 style="text-align: center;">Summary Video</h2></b-->
             <!--div class="12u$">
                 <a href=""><span class="image fit"><img src="images/RobotPoking/summary_video.png" alt=""></span></a>
             </div-->
@@ -99,7 +100,7 @@
                         <img src="images/RobotPoking/workflow.png" alt=""></span></a>
                     </div>
                     <div class="6u$"><a href=""><span class="image fit">
-                            <img src="images/RobotPoking/work_flow_video.png" alt=""></span></a>
+                            <img src="images/RobotPoking/probes.png" alt=""></span></a>
                     </div>           
                 </div>
             </div>
@@ -114,9 +115,30 @@
 
             <hr>
             <b><h2 style="text-align: center;">Example Results</h2></b>
-            <h3>Results of 2-step modeling, point model learned with AutoML and Simulator with contact solver</h3>
-            <p>
+            <p>    
+                <i>Experiments</i> show that our approach can learn a point deformation model that predicts force response 
+                 0.49N of root mean squared error (RMSE) over 5 test objects with 10 interactions each. When making 
+                 contact with novel rigid probes, which are a line-shaped paddle and a cylinder, our simulator’s force 
+                 prediction has 1.5 N RMSE. This accuracy is comparable to learned models obtained with the same 
+                 number of interactions. We also show an <i>application</i> of our method to planning for packing a rigid 
+                 object on top of a deformable object into a box.
             </p>
+
+            <h3>Results of 2-step modeling, point model learned with AutoML and Simulator with contact solver</h3>
+            <h3><i>Step 1</i></h3>          
+            <div class="box alt">
+                <div class="row 50% uniform">
+                    <div class="4u"><a href=""><span class="image fit">
+                        <img src="images/RobotPoking/pt2_d1.png" alt=""></span></a>
+                    </div>
+                    <div class="4u"><a href=""><span class="image fit">
+                            <img src="images/RobotPoking/pt5_d1.png" alt=""></span></a>
+                    </div>
+                    <div class="4u$"><a href=""><span class="image fit">
+                        <img src="images/RobotPoking/pt10_d1.png" alt=""></span></a>
+                    </div>
+                </div>
+            </div>
 
             <div class="box alt">
                 <div class="row 50% uniform">
@@ -124,10 +146,37 @@
                         <img src="images/RobotPoking/models_rmse.png" alt=""></span></a>
                     </div>
                     <div class="6u$"><a href=""><span class="image fit">
-                            <img src="images/RobotPoking/line_cylinder.png" alt=""></span></a>
+                            <img src="images/RobotPoking/objects_rmse.png" alt=""></span></a>
                     </div>           
                 </div>
             </div>
+            
+            <h3><i>Step 2</i></h3>
+            <div class="box alt">
+                <div class="row 50% uniform">
+                    <div class="6u"><a href=""><span class="image fit">
+                        <img src="images/RobotPoking/calculate.png" alt=""></span></a>
+                    </div>
+                    <div class="6u$"><a href=""><span class="image fit">
+                            <img src="images/RobotPoking/format.png" alt=""></span></a>
+                    </div>           
+                </div>
+            </div>
+
+            <div class="box alt">
+                <div class="row 50% uniform">
+                    <div class="6u"><a href=""><span class="image fit">
+                        <img src="images/RobotPoking/line_cylinder.png" alt=""></span></a>
+                    </div> 
+                    <div class="6u">
+                        <p>
+                            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;111
+                        </p>
+                        </div> 
+                </div>
+            </div>
+
+
 
             <h3>Robotic Experiments</h3>
             <p>We use Klampt and Open3D to simulate the robotic motion with deformable objects.
